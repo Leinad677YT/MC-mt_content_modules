@@ -84,6 +84,12 @@ Change the dye of the selected item by right clicking on the `+` or `-` with a *
             }
         ```
         > Where `menu_model` is the **namespaced item id** that will be put on the menu display of the loop to represent it, `material_id` the namespaced id of the **trim material** and `added_by` the pack id of the pack that added it.
+- **scoreboard objective**
+    - `zl.armor_editor.editor_id`
+        > All entities on the same editor share the same value on this score, which matches the editor id on the storage data. **Online** players can also be enabled by setting their score on this objective to the id of the editor.
+- **entity tag**
+    - `zl.armor_editor.editor`
+        > Present on all entities that form editors. Depending on the function they serve, more speciallized tags can exist, such as `zl.armor.editor.selection` for all selection related displays and interactions.
 
 > [!WARNING]
 > Everything here that happens when a player is not online does not work with internal IDs, so if they change their nickname while having a pending editor enabling query, it will not update for them, and, **in the case that someone else joins under their old nick, they will be the ones enabled**. Be careful with queried updates!

@@ -4,7 +4,7 @@
 ##
 
 ## IF MT IS LOADED => USE CALLBACKS
-    $execute if function l.user:misc/is_mt_loaded run return run function zl.armor_editor:player/disable_mt with {editor:$(editor),name:$(name)}
+    $execute if function l.user:misc/is_mt_loaded run return run function zl.armor_editor:player/disable_mt {editor:$(editor),name:$(name)}
 ##
 
 ## IF NO PLAYER => ERROR

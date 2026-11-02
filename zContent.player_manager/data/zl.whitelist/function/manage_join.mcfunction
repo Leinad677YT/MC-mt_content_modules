@@ -7,30 +7,30 @@
     ## ADD TO WHITELISTS
         $data modify storage zl.whitelist:query temp_loop set from storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
         execute if data storage zl.whitelist:query temp_loop[0] run function zl.whitelist:zaux/whitelist_loop_add with storage zl.whitelist:query temp_loop[-1]
-        data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
+        $data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
     ##
 
     ## REMOVE FROM WHITELISTS
         $data modify storage zl.whitelist:query temp_loop set from storage zl.whitelist:query pending[{name:"$(name)"}].remove_whitelist
         execute if data storage zl.whitelist:query temp_loop[0] run function zl.whitelist:zaux/whitelist_loop_remove with storage zl.whitelist:query temp_loop[-1]
-        data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
+        $data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
     ##
 
     ## ADD TAGS
         $data modify storage zl.whitelist:query temp_loop set from storage zl.whitelist:query pending[{name:"$(name)"}].add_tag
         execute if data storage zl.whitelist:query temp_loop[0] run function zl.whitelist:zaux/tag_loop_add with storage zl.whitelist:query temp_loop[-1]
-        data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
+        $data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
     ##
 
-    ## REMOVE FROM WHITELISTS
+    ## REMOVE TAGS
         $data modify storage zl.whitelist:query temp_loop set from storage zl.whitelist:query pending[{name:"$(name)"}].remove_tag
         execute if data storage zl.whitelist:query temp_loop[0] run function zl.whitelist:zaux/tag_loop_remove with storage zl.whitelist:query temp_loop[-1]
-        data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
+        $data remove storage zl.whitelist:query pending[{name:"$(name)"}].add_whitelist
     ##
 
 
     ## REMOVE QUERY
-        data remove storage zl.whitelist:query pending[{name:"$(name)"}]
+        $data remove storage zl.whitelist:query pending[{name:"$(name)"}]
     ##
 
 ##

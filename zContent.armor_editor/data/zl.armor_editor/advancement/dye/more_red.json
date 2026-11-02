@@ -1,0 +1,34 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_interacted_with_entity",
+            "conditions": {
+                "item": {
+                    "items": "minecraft:red_dye"
+                },
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:interaction"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "zl.armor_editor.editor_id": {
+                                "min": 0
+                            },
+                            "zl.armor_editor.editor_slot": -1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "zl.armor_editor:edit/dye/more_red"
+    }
+}

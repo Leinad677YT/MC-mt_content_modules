@@ -1,0 +1,1 @@
+$data modify storage zl.armor_editor:temp trim.pattern set from storage zl.armor_editor:data pattern[$(pattern_idx)].pattern_id

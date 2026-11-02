@@ -1,0 +1,1 @@
+$data modify storage zl.armor_editor:temp trim.material set from storage zl.armor_editor:data trim_mat[$(material_idx)].material_id

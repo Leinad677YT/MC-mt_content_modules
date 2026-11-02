@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:interaction"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "zl.armor_editor.editor_id": {
+                                "min": 0
+                            },
+                            "zl.armor_editor.editor_slot": 4
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "zl.armor_editor:edit/selection/get_helmet"
+    }
+}

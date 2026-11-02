@@ -1,0 +1,44 @@
+## UPDATE INDEX
+    scoreboard players remove @s zl.armor_editor.trim.pattern 1
+    execute store result storage zl.armor_editor:temp trim.pattern_idx int 1 run scoreboard players operation @s zl.armor_editor.trim.pattern %= #zl.0 zl.armor_editor.trim.pattern
+##
+
+## GET EDITOR ID
+    scoreboard players operation #zl.sync.temp zl.armor_editor.editor_id = @s zl.armor_editor.editor_id
+##
+
+## GET SLOT
+    data modify storage zl.armor_editor:temp rgb.slot set value "container.0"
+    execute if score @s zl.armor_editor.editor_slot matches 1 run data modify storage zl.armor_editor:temp trim.slot set value "armor.feet"
+    execute if score @s zl.armor_editor.editor_slot matches 2 run data modify storage zl.armor_editor:temp trim.slot set value "armor.legs"
+    execute if score @s zl.armor_editor.editor_slot matches 3 run data modify storage zl.armor_editor:temp trim.slot set value "armor.chest"
+    execute if score @s zl.armor_editor.editor_slot matches 4 run data modify storage zl.armor_editor:temp trim.slot set value "armor.head"
+    execute if score @s zl.armor_editor.editor_slot matches 5 run data modify storage zl.armor_editor:temp trim.slot set value "weapon.mainhand"
+    execute if score @s zl.armor_editor.editor_slot matches 6 run data modify storage zl.armor_editor:temp trim.slot set value "weapon.offhand"
+##
+
+## GET MATERIAL
+    execute store result storage zl.armor_editor:temp trim.material_idx int 1 run scoreboard players get @s zl.armor_editor.trim.material
+    function zl.armor_editor:edit/trim/get_material with storage zl.armor_editor:temp trim
+    function zl.armor_editor:edit/trim/get_pattern with storage zl.armor_editor:temp trim
+##
+
+## UPDATE TRIM
+    scoreboard players operation @e[type=minecraft:armor_stand, tag=zl.armor_editor.editor.stand, predicate=zl.armor_editor:same_editor] zl.armor_editor.trim.pattern = @s zl.armor_editor.trim.pattern
+    execute as @e[type=minecraft:armor_stand, tag=zl.armor_editor.editor.stand, predicate=zl.armor_editor:same_editor] run function zl.armor_editor:edit/trim/update with storage zl.armor_editor:temp trim
+    function zl.armor_editor:edit/update_displays with storage zl.armor_editor:temp trim
+##
+
+## UPDATE PATTERN LOOP
+    execute store result storage zl.armor_editor:temp trim.pattern_prev int 1 run scoreboard players remove @s zl.armor_editor.trim.pattern 1
+    scoreboard players add @s zl.armor_editor.trim.pattern 2
+    execute store result storage zl.armor_editor:temp trim.pattern_next int 1 run scoreboard players operation @s zl.armor_editor.trim.pattern %= #zl.0 zl.armor_editor.trim.pattern
+    execute store result storage zl.armor_editor:temp trim.pattern_current int 1 run scoreboard players remove @s zl.armor_editor.trim.pattern 1
+    function zl.armor_editor:zaux/get_trim_pattern_menu with storage zl.armor_editor:temp trim
+    execute as @e[type=minecraft:item_display, tag=zl.armor_editor.editor.trim_pattern, predicate=zl.armor_editor:same_editor] run function zl.armor_editor:edit/trim/update_pattern_displays with storage zl.armor_editor:temp trim
+##
+
+## REENABLE
+    data remove storage zl.armor_editor:temp trim
+    advancement revoke @s only zl.armor_editor:trim/previous_pattern
+##

@@ -1,4 +1,4 @@
-$data modify storage zl.armor_editor:temp rgb.checking set from entity @e[type=minecraft:item_display, tag=zl.armor_editor.editor.selection.$(display), limit=1] item.components."minecraft:dyed_color".rgb
+$data modify storage zl.armor_editor:temp rgb.checking set from entity @e[type=minecraft:item_display, tag=zl.armor_editor.editor.selection.$(display), limit=1] item.components."minecraft:dyed_color"
 scoreboard players reset @s zl.armor_editor.rgb.red
 scoreboard players reset @s zl.armor_editor.rgb.blue
 scoreboard players reset @s zl.armor_editor.rgb.green

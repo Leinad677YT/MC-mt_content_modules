@@ -10,7 +10,7 @@
 
 ## DISPLAY DATA
     data merge entity @s { \
-        "text": "{\"text\":\"-\"}", \
+        "text": {text:"-"}, \
         "billboard": "vertical" \
     }
 ##

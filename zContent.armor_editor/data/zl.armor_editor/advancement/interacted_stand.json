@@ -3,28 +3,28 @@
         "default": {
             "trigger": "minecraft:player_interacted_with_entity",
             "conditions": {
-                "entity": [
+                "entity": {
+                    "type": "minecraft:all_of",
+                    "terms": [
                     {
-                        "condition": "minecraft:entity_properties",
+                        "type": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
-                            "type": "minecraft:armor_stand"
+                            "entity_type": "minecraft:armor_stand"
                         }
                     },
                     {
-                        "condition": "minecraft:entity_scores",
+                        "type": "minecraft:entity_scores",
                         "entity": "this",
                         "scores": {
                             "zl.armor_editor.editor_id": {
                                 "min": 0
                             }
                         }
-                    }
-                ]
+                        }
+                    ]
+                }
             }
-        },
-        "enabler": {
-            "trigger": "minecraft:impossible"
         }
     },
     "rewards": {

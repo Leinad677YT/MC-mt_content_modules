@@ -19,6 +19,9 @@
 ## UPDATE DYE
     function zl.armor_editor:edit/dye/clear with storage zl.armor_editor:temp rgb
     scoreboard players set @s zl.armor_editor.rgb -1
+    scoreboard players set @s zl.armor_editor.rgb.red 0
+    scoreboard players set @s zl.armor_editor.rgb.green 0
+    scoreboard players set @s zl.armor_editor.rgb.blue 0
 ##
 
 ## REENABLE

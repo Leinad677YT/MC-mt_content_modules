@@ -1,9 +1,9 @@
 {
     "values":[
-        "zl.armor_editor:load/vanilla",
         {
             "id": "l.core:load",
             "required": false
-        }
+        },
+        "z_pack_manager:load/zl.armor_editor"
     ]
 }

@@ -1,0 +1,24 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+        "zl.armor_editor.editor_slot": {
+            "min": {
+                "type": "minecraft:score",
+                "score": "zl.armor_editor.editor_slot",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#zl.sync.temp"
+                }
+            },
+            "max": {
+                "type": "minecraft:score",
+                "score": "zl.armor_editor.editor_slot",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#zl.sync.temp"
+                }
+            }
+        }
+    }
+}

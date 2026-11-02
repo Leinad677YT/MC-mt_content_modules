@@ -3,16 +3,18 @@
         "requirement": {
             "trigger": "minecraft:player_interacted_with_entity",
             "conditions": {
-                "entity": [
+                "entity": {
+                    "type": "minecraft:all_of",
+                    "terms": [
                     {
-                        "condition": "minecraft:entity_properties",
+                        "type": "minecraft:entity_properties",
                         "entity": "this",
                         "predicate": {
-                            "type": "minecraft:interaction"
+                            "entity_type": "minecraft:interaction"
                         }
                     },
                     {
-                        "condition": "minecraft:entity_scores",
+                        "type": "minecraft:entity_scores",
                         "entity": "this",
                         "scores": {
                             "zl.armor_editor.editor_id": {
@@ -21,7 +23,8 @@
                             "zl.armor_editor.editor_slot": -4
                         }
                     }
-                ]
+                    ]
+                }
             }
         }
     },

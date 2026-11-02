@@ -22,19 +22,8 @@
         scoreboard objectives add zl.armor_editor.rgb.blue dummy
         scoreboard objectives add zl.armor_editor.trim.pattern dummy
         scoreboard objectives add zl.armor_editor.trim.material dummy
-        scoreboard objectives add zl.armor_editor.armor.material dummy
+        scoreboard objectives add zl.armor_editor.main dummy
     ##
-##
-
-## LOAD MATERIALS
-    data remove storage zl.armor_editor:data material[]
-    scoreboard players set #zl.0 zl.armor_editor.armor.material 0
-    function #zl.user:armor_editor/load_material
-    tellraw @a[tag=l.core.tellraw] [ \
-        {"translate": "leinad.null", "fallback": "[%1$s] ", "color": "#00e1ff", "with":[{"text": "^", "color": "#00c8c8"}]}, \
-        { \
-            "translate": "leinad.zl.armor_editor.tellraw.loaded_materials", "fallback": "Loaded materials: %1$s", "color": "dark_gray", \
-            "with": [{"score": {"name": "#zl.0","objective": "zl.armor_editor.armor.material"}}]}]
 ##
 
 ## LOAD TRIM MATERIALS

@@ -26,7 +26,7 @@
 
 ## TRIGGER UPDATE
     function zl.armor_editor:edit/update_displays with storage zl.armor_editor:temp rgb
-    function zl.armor_editor:edit/get_force_glint {display:"chest"}
+    function zl.armor_editor:edit/get_force_glint {display:"selected"}
 ##
 
 ## REENABLE

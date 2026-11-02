@@ -4,7 +4,7 @@
 ##
 
 ## PLAYSOUND
-    execute unless score @s zl.armor_editor.editor_slot matches 3 run playsound minecraft:block.netherite_block.break ambient @s ~ ~ ~ 1 1.2
+    execute unless score @s zl.armor_editor.editor_slot matches 3 run playsound minecraft:block.netherite_block.break ambient @s[tag=!l.core.silent] ~ ~ ~ 1 1.2
     execute if score @s zl.armor_editor.editor_slot matches 3 run function zl.armor_editor:edit/dye/get_rgb {display:"chest"}
     execute if score @s zl.armor_editor.editor_slot matches 3 run function zl.armor_editor:edit/trim/get_trim {display:"chest"}
     execute if score @s zl.armor_editor.editor_slot matches 3 run playsound minecraft:block.amethyst_block.step neutral @s[tag=!l.core.silent] ~ ~ ~ 0.1 0.4 0
@@ -15,6 +15,7 @@
     scoreboard players set #zl.sync.temp zl.armor_editor.editor_slot 3
     scoreboard players set @s zl.armor_editor.editor_slot 3
     execute as @e[type=minecraft:item_display, tag=zl.armor_editor.editor.selection, predicate=zl.armor_editor:same_editor] run function zl.armor_editor:edit/selection/set_selected
+    function zl.armor_editor:edit/get_force_glint {display:"selected"}
 ##
 
 ## SET SLOT AS BOOTS FOR LATER

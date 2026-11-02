@@ -4,7 +4,7 @@
 ##
 
 ## PLAYSOUND
-    playsound minecraft:block.grindstone.use ambient @s ~ ~ ~ 0.8 0.4 1
+    playsound minecraft:block.grindstone.use ambient @s[tag=!l.core.silent] ~ ~ ~ 0.8 0.4 1
 ##
 
 ## UPDATE

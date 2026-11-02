@@ -1,11 +1,59 @@
 {
+    "id":"zl.armor_editor",
     "pack": {
         "description": [{"translate":"leinad.zl.armor_editor.description","fallback":"Create and customize armor visuals directly ingame", "color":"#000fff7"}],
-        "pack_format": 48
+        "pack_format": 81,
+        "supported_formats": [48,121],
+        "min_format": 48,
+        "max_format": [121,0]
     },
     "overlays": {
         "entries": [
-            
+            {
+                "directory": "pre_26_3",
+                "formats": {
+                    "min_inclusive": 48,
+                    "max_inclusive": 120
+                },
+                "min_format": 48,
+                "max_format": 120
+            },
+            {
+                "directory": "pre_26_2",
+                "formats": {
+                    "min_inclusive": 48,
+                    "max_inclusive": 107
+                },
+                "min_format": 48,
+                "max_format": [107,0]
+            },
+            {
+                "directory": "pre_1_21_9",
+                "formats": {
+                    "min_inclusive": 48,
+                    "max_inclusive": 87
+                },
+                "min_format": 48,
+                "max_format": 87
+            },
+            {
+                "directory": "pre_1_21_5",
+                "formats": {
+                    "min_inclusive": 48,
+                    "max_inclusive": 70
+                },
+                "min_format": 48,
+                "max_format": 70
+            },
+            {
+                "directory": "pack_manager_info",
+                "formats": {
+                    "min_inclusive": 121,
+                    "max_inclusive": 999
+                },
+                "min_format": 121,
+                "max_format": 999
+            }
         ]
     }
 }

@@ -3,7 +3,7 @@
 ##
 
 ## PLAYSOUND
-    playsound minecraft:block.anvil.place ambient @s ~ ~ ~ 0.8 0.4 1
+    playsound minecraft:block.anvil.place ambient @s[tag=!l.core.silent] ~ ~ ~ 0.3 0.4 0
 ##
 
 ## UPDATE THE CLOSEST DISPLAY FOR LATER CLONING
